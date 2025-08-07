@@ -1,31 +1,35 @@
-"use strict";
+"use strict"
 
-    const containerFotos = document.getElementById("containerFotos");
+const containerFotos = document.getElementById("containerFotos")
 
-    async function pegarFotos() {
-      const response = await fetch("https://json-server-wech.onrender.com");
-      const data = await response.json();
-      return data;
-    }
+async function pegarFotos(){
+    const response = await fetch("https://json-server-wech.onrender.com")
+    const data = await response.json()
 
-    async function carregarFotos() {
-      const fotos = await pegarFotos();
-      let index = 0;
-      setInterval(() => {
-        containerFotos.replaceChildren();
+    return data
+}
 
-        const foto = document.createElement("img");
-        foto.src = fotos[index].imagem;
-        foto.alt = fotos[index].legenda;
+async function carregarFotos() {
+    const fotos = await pegarFotos()
 
-        const legenda = document.createElement("p");
-        legenda.textContent = fotos[index].legenda;
+    let index = 0
+    setInterval(() =>{
+        console.log(fotos[index])
+        
+        containerFotos.replaceChildren()
 
-        containerFotos.appendChild(foto);
-        containerFotos.appendChild(legenda);
+        let foto = document.createElement("img")
+        foto.src = fotos[index].imagem
 
-        index = (index + 1) % fotos.length;
-      }, 4000);
-    }
+        let legenda = document.createElement("p")
+        legenda.textContent = fotos[index].legenda
 
-    carregarFotos();
+        containerFotos.appendChild(foto)
+        containerFotos.appendChild(legenda)
+
+
+        index = (index + 1) % fotos.length
+    }, 4000)
+}
+
+carregarFotos()

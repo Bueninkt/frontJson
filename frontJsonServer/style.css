@@ -1,44 +1,38 @@
-/* reset básico */
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+.containerFotos {
+    height: 100vh;
+    width: 100vw;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #f0f0f5;
-    font-family: Arial, sans-serif;
-  }
-  
-  #containerFotos {
-    position: relative;
-    width: 640px;
-    height: 360px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    background: #000;
-  }
-  
-  #containerFotos img {
-    display: block;
-    width: 100%;
+    justify-content: center;
+
+    background-color: rgb(36, 36, 36);
+}
+
+.containerFotos img {
     height: 100%;
-    object-fit: cover;
-  }
-  
-  #containerFotos p {
+    width: auto;
+}
+
+.containerFotos p {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem;
+
     width: 100%;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    font-size: 1.1rem;
+    background-color: aliceblue;
     text-align: center;
-  }
+    font-size: 2rem;
+}
+
+.containerFotos h2 {
+    color: white;
+    font-size: 3rem;
+}
